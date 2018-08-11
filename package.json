@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "16.4.1",
     "react-native": "^0.56.0",
+    "react-native-slider": "^0.11.0",
     "react-native-vector-icons": "^5.0.0",
     "react-native-yz-vlcplayer": "^1.0.7"
   },
