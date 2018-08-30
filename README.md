@@ -1,6 +1,6 @@
 # vlcplayerExample
 
- ![](./resource/1.mp4)   
+ ![](./resource/1.gif)   
 
 setp1:
 
