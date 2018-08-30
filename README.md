@@ -1,5 +1,7 @@
 # vlcplayerExample
 
+ ![](./resource/1.mp4)   
+
 setp1:
 
   npm install
