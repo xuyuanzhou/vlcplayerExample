@@ -7,25 +7,80 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import  { VlCPlayerView } from 'react-native-yz-vlcplayer';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import {Platform, StyleSheet, Text, View, ScrollView} from 'react-native';
+import  { VlcSimplePlayer } from 'react-native-yz-vlcplayer';
+import Orientation from 'react-native-orientation'
 
 type Props = {};
 export default class App extends Component<Props> {
+
+  state = {
+    isFull:false
+  };
+
+  onStartFullScreen = ()=>{
+    this.setState({
+      isFull:true,
+    })
+  }
+
+  onCloseFullScreen = ()=>{
+    this.setState({
+      isFull:false,
+    })
+  }
+
   render() {
+    let { isFull } = this.state;
     return (
-      <View style={styles.container}>
-        <VlCPlayerView
+      <ScrollView scrollEnabled={isFull ? false : true} style={styles.container} contentContainerStyle={{
+        flex: isFull ? 1: 0,
+        justifyContent: 'center',
+         alignItems: 'center',
+         paddingTop: isFull ? 0 : 40,
+      }}>
+
+        <Text style={{marginTop:10}}>RTMP协议直播源</Text>
+        <VlcSimplePlayer
+          //autoplay={false}
           url={"rtmp://live.hkstv.hk.lxdns.com/live/hks"}
+          Orientation={Orientation}
+          style={{width:'80%'}}
+          onStartFullScreen={this.onStartFullScreen}
+          onCloseFullScreen={this.onCloseFullScreen}
         />
-      </View>
+
+        <Text style={{marginTop:20}}>mp4</Text>
+        <VlcSimplePlayer
+          url={"http://bxyzvideo.doctorz.cn:8080/add2019/9.mp4"}
+          Orientation={Orientation}
+          //autoplay={false}
+          style={{width:'80%'}}
+          onStartFullScreen={this.onStartFullScreen}
+          onCloseFullScreen={this.onCloseFullScreen}
+        />
+
+        <Text style={{marginTop:20}}>rtsp</Text>
+        <VlcSimplePlayer
+          style={{width:'80%'}}
+          autoplay={false}
+          url={"rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov"}
+          Orientation={Orientation}
+          onStartFullScreen={this.onStartFullScreen}
+          onCloseFullScreen={this.onCloseFullScreen}
+        />
+
+        <Text style={{marginTop:20}}>HTTP协议直播源</Text>
+        <VlcSimplePlayer
+          style={{width:'80%'}}
+          autoplay={false}
+          url={"http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8"}
+          Orientation={Orientation}
+          onStartFullScreen={this.onStartFullScreen}
+          onCloseFullScreen={this.onCloseFullScreen}
+        />
+        <View style={{height:100,width:'100%'}}/>
+      </ScrollView>
     );
   }
 }
@@ -33,9 +88,6 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    /*justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',*/
   },
   welcome: {
     fontSize: 20,
