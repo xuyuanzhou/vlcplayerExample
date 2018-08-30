@@ -1,6 +1,6 @@
 # vlcplayerExample
 
-[](https://github.com/xuyuanzhou/resource/blob/master/gif/lizi.gif)
+![](https://github.com/xuyuanzhou/resource/blob/master/gif/lizi.gif)
 
 setp1:
 
