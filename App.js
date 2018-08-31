@@ -40,22 +40,69 @@ export default class App extends Component<Props> {
          paddingTop: isFull ? 0 : 40,
       }}>
 
-        <Text style={{marginTop:10}}>RTMP协议直播源</Text>
+        <Text style={{marginTop:10}}>RTMP协议直播源,自动reload</Text>
         <VlcSimplePlayer
           //autoplay={false}
           url={"rtmp://live.hkstv.hk.lxdns.com/live/hks"}
+          isLive={true}
+          autoReloadLive={true}
           Orientation={Orientation}
           style={{width:'80%'}}
           onStartFullScreen={this.onStartFullScreen}
           onCloseFullScreen={this.onCloseFullScreen}
         />
 
-        <Text style={{marginTop:20}}>mp4</Text>
+        <Text style={{marginTop:10}}>RTMP协议直播源,非自动reload</Text>
+        <VlcSimplePlayer
+          //autoplay={false}
+          url={"rtmp://live.hkstv.hk.lxdns.com/live/hks"}
+          isLive={true}
+          autoReloadLive={false}
+          Orientation={Orientation}
+          style={{width:'80%'}}
+          onStartFullScreen={this.onStartFullScreen}
+          onCloseFullScreen={this.onCloseFullScreen}
+        />
+
+        <Text style={{marginTop:20}}>广告、标题示例</Text>
         <VlcSimplePlayer
           url={"http://bxyzvideo.doctorz.cn:8080/add2019/9.mp4"}
           Orientation={Orientation}
           //autoplay={false}
           style={{width:'80%'}}
+          onStartFullScreen={this.onStartFullScreen}
+          onCloseFullScreen={this.onCloseFullScreen}
+          showAd={true}
+          reloadWithAd={true}
+          adUrl={require('./resource/1.mp4')}
+          showTop={true}
+          showBack={true}
+          onLeftPress={()=>{alert('点击了返回按钮')}}
+          showTitle={true}
+          title={"标题显示"}
+        />
+
+
+        <Text style={{marginTop:20}}>vip示例</Text>
+        <VlcSimplePlayer
+          url={"http://bxyzvideo.doctorz.cn:8080/add2019/9.mp4"}
+          Orientation={Orientation}
+          //autoplay={false}
+          style={{width:'80%'}}
+          onStartFullScreen={this.onStartFullScreen}
+          onCloseFullScreen={this.onCloseFullScreen}
+          useVip={true}
+          vipPlayLength={180}
+          onVipPress={()=>{alert('正在购买中...')}}
+
+        />
+
+        <Text style={{marginTop:20}}>本地资源</Text>
+        <VlcSimplePlayer
+          style={{width:'80%'}}
+          autoplay={false}
+          url={require('./resource/1.mp4')}
+          Orientation={Orientation}
           onStartFullScreen={this.onStartFullScreen}
           onCloseFullScreen={this.onCloseFullScreen}
         />
