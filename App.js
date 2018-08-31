@@ -109,10 +109,9 @@ export default class App extends Component<Props> {
         >
           <Text style={{marginTop:10}}>RTMP协议直播源,自动reload</Text>
           <VlcSimplePlayer
-            autoplay={false}
             url={"rtmp://live.hkstv.hk.lxdns.com/live/hks"}
             isLive={true}
-            autoReloadLive={false}
+            autoReloadLive={true}
             Orientation={Orientation}
             style={{width:'80%'}}
             onStartFullScreen={this.onStartFullScreen}
@@ -121,7 +120,6 @@ export default class App extends Component<Props> {
 
           <Text style={{marginTop:10}}>RTMP协议直播源,非自动reload</Text>
           <VlcSimplePlayer
-            autoplay={false}
             url={"rtmp://live.hkstv.hk.lxdns.com/live/hks"}
             isLive={true}
             autoReloadLive={false}
@@ -135,7 +133,6 @@ export default class App extends Component<Props> {
           <VlcSimplePlayer
             url={"http://bxyzvideo.doctorz.cn:8080/add2019/9.mp4"}
             Orientation={Orientation}
-            autoplay={false}
             style={{width:'80%'}}
             onStartFullScreen={this.onStartFullScreen}
             onCloseFullScreen={this.onCloseFullScreen}
@@ -154,7 +151,6 @@ export default class App extends Component<Props> {
           <VlcSimplePlayer
             url={"http://bxyzvideo.doctorz.cn:8080/add2019/9.mp4"}
             Orientation={Orientation}
-            autoplay={false}
             style={{width:'80%'}}
             onStartFullScreen={this.onStartFullScreen}
             onCloseFullScreen={this.onCloseFullScreen}
@@ -167,7 +163,6 @@ export default class App extends Component<Props> {
           <Text style={{marginTop:20}}>本地资源</Text>
           <VlcSimplePlayer
             style={{width:'80%'}}
-            autoplay={false}
             url={require('./resource/1.mp4')}
             Orientation={Orientation}
             onStartFullScreen={this.onStartFullScreen}
@@ -177,7 +172,6 @@ export default class App extends Component<Props> {
           <Text style={{marginTop:20}}>rtsp</Text>
           <VlcSimplePlayer
             style={{width:'80%'}}
-            autoplay={false}
             url={"rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov"}
             Orientation={Orientation}
             onStartFullScreen={this.onStartFullScreen}
