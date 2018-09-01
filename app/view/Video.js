@@ -9,11 +9,12 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, ScrollView, FlatList, Dimensions, TouchableOpacity} from 'react-native';
 import  { VlcSimplePlayer } from 'react-native-yz-vlcplayer';
+import { withContext } from '../ContextManage';
 import Orientation from 'react-native-orientation'
 let deviceHeight = Dimensions.get('window').height;
-import Http from './app/utils/Http';
+
 type Props = {};
-export default class App extends Component<Props> {
+class Video extends Component<Props> {
 
   constructor(props){
     super(props);
@@ -29,13 +30,6 @@ export default class App extends Component<Props> {
   };
 
   componentDidMount(){
-   // this.interval = setInterval(this.autoScroll,5000);
-    Http.get('http://open.douyucdn.cn/api/RoomApi/live/DOTA2')
-      .then(data=>{
-        console.log(data)
-      }).catch(e=>{
-        console.log(e)
-    })
   }
 
   componentWillUnmount(){
@@ -92,9 +86,17 @@ export default class App extends Component<Props> {
 
 
   render() {
+    let { navigation } = this.props;
     let { isFull } = this.state;
     return (
       <View  style={[styles.container,{marginTop: isFull ? 0 :  40 }]}>
+        {
+          !isFull &&
+          <TouchableOpacity onPress={()=>{
+          navigation.goBack();
+        }}><Text>返回</Text>
+          </TouchableOpacity>
+        }
         {!isFull && <View style={{alignItems:'center',marginBottom:20}}>
           <TouchableOpacity
             style={{justifyContent:'center',alignItems:'center',height:40,width:200,backgroundColor:'green'}}
@@ -145,7 +147,7 @@ export default class App extends Component<Props> {
             onCloseFullScreen={this.onCloseFullScreen}
             showAd={true}
             reloadWithAd={true}
-            adUrl={require('./app/resource/1.mp4')}
+            adUrl={require('../resource/1.mp4')}
             showTop={true}
             showBack={true}
             onLeftPress={()=>{alert('点击了返回按钮')}}
@@ -170,7 +172,7 @@ export default class App extends Component<Props> {
           <Text style={{marginTop:20}}>本地资源</Text>
           <VlcSimplePlayer
             style={{width:'80%'}}
-            url={require('./app/resource/1.mp4')}
+            url={require('../resource/1.mp4')}
             Orientation={Orientation}
             onStartFullScreen={this.onStartFullScreen}
             onCloseFullScreen={this.onCloseFullScreen}
@@ -216,3 +218,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+Video = withContext(Video);
+
+export default  Video;
