@@ -178,6 +178,15 @@ class Video extends Component<Props> {
             onCloseFullScreen={this.onCloseFullScreen}
           />
 
+          <Text style={{marginTop:20}}>本地资源,竖屏</Text>
+          <VlcSimplePlayer
+            style={{width:'80%'}}
+            url={require('../resource/1.mp4')}
+            //Orientation={Orientation}
+            onStartFullScreen={this.onStartFullScreen}
+            onCloseFullScreen={this.onCloseFullScreen}
+          />
+
           <Text style={{marginTop:20}}>rtsp</Text>
           <VlcSimplePlayer
             style={{width:'80%'}}
