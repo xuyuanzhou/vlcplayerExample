@@ -54,7 +54,6 @@
 		D50491A55FBE4307A80A258A /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E24E5A6240A140A1BBAF2ED4 /* EvilIcons.ttf */; };
 		D80EC00E6C15484CBF40B488 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A16B612BFF084F23BFF06E10 /* FontAwesome.ttf */; };
 		ECF50AC1211F3F5500B7B28B /* MobileVLCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF50AC0211F3F5500B7B28B /* MobileVLCKit.framework */; };
-		ECF50AC3211F415B00B7B28B /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF50AC2211F415A00B7B28B /* libstdc++.6.0.9.tbd */; };
 		ECF50AC7211F417100B7B28B /* libiconv.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF50AC6211F417100B7B28B /* libiconv.2.tbd */; };
 		ECF50AC9211F418000B7B28B /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF50AC8211F417F00B7B28B /* libc++.1.tbd */; };
 		ECF50ACB211F418B00B7B28B /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF50ACA211F418B00B7B28B /* libbz2.1.0.tbd */; };
@@ -412,7 +411,6 @@
 		E25DC6BCD66C42BDA55AD105 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		E4934DC285B3411B94E79CBA /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		ECF50AC0211F3F5500B7B28B /* MobileVLCKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileVLCKit.framework; path = ../vlcKit/MobileVLCKit.framework; sourceTree = "<group>"; };
-		ECF50AC2211F415A00B7B28B /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		ECF50AC6211F417100B7B28B /* libiconv.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.tbd; path = usr/lib/libiconv.2.tbd; sourceTree = SDKROOT; };
 		ECF50AC8211F417F00B7B28B /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		ECF50ACA211F418B00B7B28B /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
@@ -454,7 +452,6 @@
 				ECF50ACB211F418B00B7B28B /* libbz2.1.0.tbd in Frameworks */,
 				ECF50AC9211F418000B7B28B /* libc++.1.tbd in Frameworks */,
 				ECF50AC7211F417100B7B28B /* libiconv.2.tbd in Frameworks */,
-				ECF50AC3211F415B00B7B28B /* libstdc++.6.0.9.tbd in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -651,7 +648,6 @@
 				ECF50ACA211F418B00B7B28B /* libbz2.1.0.tbd */,
 				ECF50AC8211F417F00B7B28B /* libc++.1.tbd */,
 				ECF50AC6211F417100B7B28B /* libiconv.2.tbd */,
-				ECF50AC2211F415A00B7B28B /* libstdc++.6.0.9.tbd */,
 				ECF50AC0211F3F5500B7B28B /* MobileVLCKit.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 			);
@@ -1451,6 +1447,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../vlcKit ";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1479,6 +1476,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../vlcKit ";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

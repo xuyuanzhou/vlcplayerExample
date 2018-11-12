@@ -180,7 +180,7 @@ export default class App extends Component<Props> {
           <VlcSimplePlayer
             style={{width:'80%'}}
             url={"rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov"}
-            Orientation={Orientation}
+            //Orientation={Orientation}
             onStartFullScreen={this.onStartFullScreen}
             onCloseFullScreen={this.onCloseFullScreen}
           />
